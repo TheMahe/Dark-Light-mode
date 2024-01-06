@@ -51,6 +51,7 @@ h1 {
 h2 {
   font-size: 32px;
   font-weight: normal;
+  color: var(--on-background-alt);
 }
 
 /* Navigation */
@@ -62,6 +63,7 @@ nav {
   padding: 25px;
   width: 100vw;
   background: rgb(255 255 255 / 50%);
+  font-family: Oswald, sans-serif;
 }
 
 a {
