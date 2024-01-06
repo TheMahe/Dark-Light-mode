@@ -1,3 +1,4 @@
+// Get DOM elements
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
 const nav = document.getElementById('nav');
 const toggleIcon = document.getElementById('toggle-icon');
@@ -5,16 +6,16 @@ const image1 = document.getElementById('image1');
 const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
 const textBox = document.getElementById('text-box');
-// Dark or Light Images
 
+// Update image source based on color
 function imageMode(color) {
     image1.src = `img/undraw_proud_coder_${color}.svg`;
     image2.src = `img/undraw_feeling_proud_${color}.svg`;
     image3.src = `img/undraw_conceptual_idea_${color}.svg`;
 }
 
-// Dark Mode Styles
-function darkMode() {
+// Apply dark mode styles
+function applyDarkMode() {
     nav.style.backgroundColor = 'rgb(0 0 0 / 50%)';
     textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)';
     toggleIcon.children[0].textContent = 'Dark Mode';
@@ -22,8 +23,8 @@ function darkMode() {
     imageMode('dark');
 }
 
-// Light Mode Styles
-function lightMode() {
+// Apply light mode styles
+function applyLightMode() {
     nav.style.backgroundColor = 'rgb(255 255 255 / 50%)';
     textBox.style.backgroundColor = 'rgb(0 0 0 / 50%)';
     toggleIcon.children[0].textContent = 'Light Mode';
@@ -31,18 +32,17 @@ function lightMode() {
     imageMode('light');
 }
 
-// Switch Theme Dynamically
+// Switch theme dynamically
 function switchTheme(event) {
-    if (event.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        darkMode();
+    const theme = event.target.checked ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    if (theme === 'dark') {
+        applyDarkMode();
     } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        lightMode();
+        applyLightMode();
     }
 }
 
-// Event Listener
+// Add event listener
 toggleSwitch.addEventListener('change', switchTheme);
