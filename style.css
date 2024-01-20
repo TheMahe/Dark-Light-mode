@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Kaushan+Script&family=Oswald&display=swap');
+/**
+ * 
+ * This CSS file contains the styling for a light-dark mode website.
+ * It defines the color variables, font styles, section styles, navigation styles,
+ * and other styles used throughout the website.
+ * 
+ * The file is organized into sections for Home, About, Projects, and Contact.
+ * It also includes a Dark Mode toggle switch.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Kaushan+Script&family=Oswald&display=swap");
 
 :root {
   --primary-color: rgb(255, 92, 92);
